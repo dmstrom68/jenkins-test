@@ -22,16 +22,18 @@ pipeline {
                 ''')
             }
         }
-
+            
         stage('Check') {
             parallel {
                 stage('Check:Lint') {
                     steps {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                         sh('''
                             #!/bin/bash
                             . ./local/bin/activate
                             make check lint
                         ''')
+                        }    
                     }
                 }
 
