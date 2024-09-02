@@ -4,13 +4,14 @@ Parameters:
   InstanceType:
     Type: String
     Description: The size to use for the EC2 instance
-    Default: t3.2xlarge
+    Default: t2.micro
     AllowedValues:
-      - t3.small
-      - t3.medium
-      - t3.large
-      - t3.xlarge
-      - t3.2xlarge
+      - t2.micro
+      - t3.micro
+#      - t3.medium
+#      - t3.large
+#      - t3.xlarge
+#      - t3.2xlarge
     ConstraintDescription: Must be a valid EC2 instance type.
 
 Resources:
